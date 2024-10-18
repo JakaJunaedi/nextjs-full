@@ -1,5 +1,4 @@
 import { auth } from '@/auth'
-import React from 'react'
 
 const DashboardPage = async () => {
     const session = await auth();
