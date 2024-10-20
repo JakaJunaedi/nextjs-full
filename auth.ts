@@ -43,7 +43,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user;
-      const ProtectedRoutes = ["/", "/user", "/invoice"];
+      const ProtectedRoutes = ["/", "/users", "/invoices"];
 
       // jika tidak login
       if (!isLoggedIn && ProtectedRoutes.includes(nextUrl.pathname)) {
