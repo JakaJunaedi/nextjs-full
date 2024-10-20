@@ -43,16 +43,16 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user;
-      const ProtectedRoutes = ["/dashboard", "/user", "/invoice"];
+      const ProtectedRoutes = ["/", "/user", "/invoice"];
 
       // jika tidak login
       if (!isLoggedIn && ProtectedRoutes.includes(nextUrl.pathname)) {
         return Response.redirect(new URL("/signin", nextUrl));
       }
 
-      // jika sudah login redirect ke dashboard
+      // jika sudah login redirect ke baseUrl
       if (isLoggedIn && nextUrl.pathname.startsWith("/signin")) {
-        return Response.redirect(new URL("/dashboard", nextUrl));
+        return Response.redirect(new URL("/", nextUrl));
       }
       return true;
     },
