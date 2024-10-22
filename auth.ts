@@ -43,7 +43,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user;
-      const ProtectedRoutes = ["/", "/users", "/invoices"];
+      const ProtectedRoutes = ["/home", "/users", "/invoices", "/equities"];
 
       // jika tidak login
       if (!isLoggedIn && ProtectedRoutes.includes(nextUrl.pathname)) {
@@ -52,7 +52,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
       // jika sudah login redirect ke baseUrl
       if (isLoggedIn && nextUrl.pathname.startsWith("/signin")) {
-        return Response.redirect(new URL("/", nextUrl));
+        return Response.redirect(new URL("/home", nextUrl));
       }
       return true;
     },

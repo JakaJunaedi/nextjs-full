@@ -10,7 +10,7 @@ const AccountToggle = async () => {
         <Image src={ session?.user?.image || "/avatr1.png"} alt="avatar" width={30} height={30} />
         <div className="text-start">
           <span className="text-sm font-bold block text-stone-500">
-            {session?.user?.name}
+            {session?.user?.role}
           </span>
           <span className="text-xs block text-stone-500">
             {session?.user?.email}

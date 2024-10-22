@@ -45,7 +45,7 @@ export const signInCredentials = async (prevState: unknown, formData: FormData) 
 
   try {
     // Redirect Success Login Route
-    await signIn("credentials", {email, password, redirectTo: '/'})
+    await signIn("credentials", {email, password, redirectTo: '/home'})
   } catch (error) {
     if(error instanceof AuthError) {
       switch (error.type) {

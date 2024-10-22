@@ -2,7 +2,6 @@
 import AccountToggle from "@/components/Sidebar/AccountToggle";
 import Search from "@/components/Sidebar/Search";
 import { MenuSelect } from "@/components/Sidebar/MenuSelect";
-import SignoutButton from "@/components/Sidebar/SignoutButton";
 
 const Sidebar = async () => {
     
@@ -13,7 +12,6 @@ const Sidebar = async () => {
         <AccountToggle />
         <Search />
         <MenuSelect />
-        <SignoutButton />
       </div>
     </div>
   );
