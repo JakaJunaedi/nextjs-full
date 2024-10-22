@@ -1,5 +1,6 @@
 import { auth } from "@/auth";
 import Image from "next/image";
+import { IoMdNotifications } from "react-icons/io";
 
 const Navbar = async () => {
   const session = await auth();
@@ -20,12 +21,10 @@ const Navbar = async () => {
         />
       </div>
       <div className="flex items-center gap-6 justify-end w-full">
-        <div className="bg-white rounded-full w-7 h-7 flex items-center justify-center">
-          <Image src="/avatr1.png" alt="" width={20} height={20} />
-        </div>
+        
         <div className="bg-white w-7 h-7 flex items-center justify-center relative rounded-full text-xs">
-          <Image src="/avatr1.png" alt="" width={20} height={20} />
-          <div className="absolute -top-3 w-5 h-5 flex items-center justify-center bg-purple-500 text-white rounded-full text-xs">
+        <IoMdNotifications className="size-7"/>
+          <div className="absolute -top-3 w-4 h-4 flex items-center justify-center bg-blue-500 text-white rounded-full text-xs">
             1
           </div>
         </div>

@@ -2,6 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import SignoutButton from "@/components/Menu/SignoutButton";
 import { auth } from "@/auth";
+import { FaHome } from "react-icons/fa";
+import { FaSackDollar } from "react-icons/fa6";
+import { BiSolidUserAccount } from "react-icons/bi";
+import { FaFileInvoiceDollar } from "react-icons/fa";
+import { IoSettingsSharp } from "react-icons/io5";
+import { MdHelpCenter } from "react-icons/md";
 
 const Menu = async () => {
   const session = await auth();
@@ -18,14 +24,14 @@ const Menu = async () => {
               href="/home"
               className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2"
             >
-              <Image src="/avatr1.png" alt="menu" width={20} height={20} />
+              <FaHome className="size-5" />
               <span className="hidden lg:block">Home</span>
             </Link>
             <Link
               href="/invoices"
               className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2"
             >
-              <Image src="/avatr1.png" alt="menu" width={20} height={20} />
+              <FaFileInvoiceDollar className="size-5" />
               <span className="hidden lg:block">Invoice</span>
             </Link>
             {session.user.role === "owner" ? (
@@ -34,14 +40,14 @@ const Menu = async () => {
                   href="/users"
                   className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2"
                 >
-                  <Image src="/avatr1.png" alt="menu" width={20} height={20} />
+                  <BiSolidUserAccount className="size-5" />
                   <span className="hidden lg:block">Users</span>
                 </Link>
                 <Link
                   href="/equities"
                   className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2"
                 >
-                  <Image src="/avatr1.png" alt="menu" width={20} height={20} />
+                  <FaSackDollar className="size-5" />
                   <span className="hidden lg:block">Equities</span>
                 </Link>
               </div>
@@ -54,14 +60,14 @@ const Menu = async () => {
               href="/invoices"
               className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2"
             >
-              <Image src="/avatr1.png" alt="menu" width={20} height={20} />
+              <IoSettingsSharp className="size-5" />
               <span className="hidden lg:block">Setting</span>
             </Link>
             <Link
               href="/invoices"
               className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2"
             >
-              <Image src="/avatr1.png" alt="menu" width={20} height={20} />
+              <MdHelpCenter className="size-5" />
               <span className="hidden lg:block">Help Me</span>
             </Link>
             <SignoutButton />
